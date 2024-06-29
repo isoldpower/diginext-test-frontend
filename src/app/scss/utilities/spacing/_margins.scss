@@ -1,0 +1,67 @@
+@mixin margins($size-name, $size-value) {
+    &m-#{$size-name} {
+        margin: $size-value;
+    }
+
+    &mt-#{$size-name} {
+        margin-top: $size-value;
+    }
+
+    &mb-#{$size-name} {
+        margin-bottom: $size-value;
+    }
+
+    &ml-#{$size-name} {
+        margin-left: $size-value;
+
+    }
+
+    &mr-#{$size-name} {
+        margin-right: $size-value;
+
+    }
+
+    &mx-#{$size-name} {
+        margin-left: $size-value;
+        margin-right: $size-value;
+    }
+
+    &my-#{$size-name} {
+        margin-top: $size-value;
+        margin-bottom: $size-value;
+    }
+}
+
+@mixin margins-important($size-name, $size-value) {
+    &m-#{$size-name} {
+        margin: $size-value !important;
+    }
+
+    &mt-#{$size-name} {
+        margin-top: $size-value !important;
+    }
+
+    &mb-#{$size-name} {
+        margin-bottom: $size-value !important;
+    }
+
+    &ml-#{$size-name} {
+        margin-left: $size-value !important;
+
+    }
+
+    &mr-#{$size-name} {
+        margin-right: $size-value !important;
+
+    }
+
+    &mx-#{$size-name} {
+        margin-left: $size-value !important;
+        margin-right: $size-value !important;
+    }
+
+    &my-#{$size-name} {
+        margin-top: $size-value !important;
+        margin-bottom: $size-value !important;
+    }
+}

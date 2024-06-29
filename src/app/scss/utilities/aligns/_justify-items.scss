@@ -1,0 +1,63 @@
+@mixin justify-items() {
+    &justify-items {
+        &-center {
+            justify-items: center;
+        }
+
+        &-start {
+            justify-items: flex-start;
+        }
+
+        &-end {
+            justify-items: flex-end;
+        }
+
+        &-left {
+            justify-items: left;
+        }
+
+        &-right {
+            justify-items: right;
+        }
+
+        &-center {
+            justify-items: center;
+        }
+
+        &-stretch {
+            justify-items: stretch;
+        }
+    }
+}
+
+@mixin justify-items-important() {
+    &justify-items {
+        &-center {
+            justify-items: center !important;
+        }
+
+        &-start {
+            justify-items: flex-start !important;
+        }
+
+        &-end {
+            justify-items: flex-end !important;
+        }
+
+        &-left {
+            justify-items: left !important;
+        }
+
+        &-right {
+            justify-items: right !important;
+        }
+
+        &-center {
+            justify-items: center !important;
+        }
+
+        &-stretch {
+            justify-items: stretch !important;
+        }
+    }
+}

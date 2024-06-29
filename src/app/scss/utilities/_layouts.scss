@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+@use './layouts/index' as layouts;
+
+@mixin -layouts($important) {
+    @if $important {
+        @include layouts.flex-important();
+        @include layouts.grid-important();
+    } @else {
+        @include layouts.flex();
+        @include layouts.grid();
+    }
+}
+
+.#{$prefix} {
+    @include each-breakpoint() {
+        @include -layouts($important: true);
+    }
+
+    @include -layouts($important: false);
+}

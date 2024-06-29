@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.#{$prefix} {
+    &main-gutter {
+        display: flex;
+        justify-content: center;
+        padding-left: $size-4;
+        padding-right: $size-4;
+
+        @include mq(tablet) {
+            padding-left: $size-9;
+            padding-right: $size-9;
+        }
+
+        @include mq(laptop) {
+            padding-left: $size-11;
+            padding-right: $size-11;
+        }
+
+        @include mq(desktop) {
+            padding-left: $size-13;
+            padding-right: $size-13;
+        }
+
+        &-content {
+            width: 100%;
+            max-width: 1420px;
+        }
+    }
+
+    &text-gutter {
+        $AVG_PARAGRAPH_CHAR_SIZE: 10px;
+        $MAX_PARAGRAPH_SYMBOLS: 70;
+        max-width: $AVG_PARAGRAPH_CHAR_SIZE * $MAX_PARAGRAPH_SYMBOLS;
+    }
+}
+
+:root {
+    --column-spacing: 0.5rem;
+
+    @include mq(tablet) {
+        --column-spacing: 1.25rem;
+    }
+}

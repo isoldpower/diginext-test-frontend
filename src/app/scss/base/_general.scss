@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+body {
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-size: $body-font-size;
+    color: $body-text-color;
+    background-color: $body-background-color;
+    line-height: $body-line-height;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+ul {
+    list-style: none !important;
+}
+
+:root {
+    height: 100%;
+}
+
+#\#root {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: $heading-letter-spacing;
+    line-height: $heading-line-height;
+    font-family: $heading-font-family;
+}
+
+a {
+    text-decoration: none !important;
+    color: $color-text-default;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+* {
+    position: relative;
+}
+
+*::before,
+*::after {
+    position: absolute;
+    background-size: 100% 100%;
+}
+
+header {
+    font-family: $header-font-family;
+    line-height: $header-line-height;
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+}

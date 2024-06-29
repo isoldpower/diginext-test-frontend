@@ -1,0 +1,135 @@
+@mixin min-height() {
+    &min-height {
+        &-11of12 {
+            min-height: calc(11 / 12 * 100%);
+        }
+
+        &-7of12 {
+            min-height: calc(7 / 12 * 100%);
+        }
+
+        &-5of12 {
+            min-height: calc(5 / 12 * 100%);
+        }
+
+        &-1of12 {
+            min-height: calc(1 / 12 * 100%);
+        }
+
+        &-5of6 {
+            min-height: calc(5 / 6 * 100%);
+        }
+
+        &-1of6 {
+            min-height: calc(1 / 6 * 100%);
+        }
+
+        &-4of5 {
+            min-height: 80%;
+        }
+
+        &-3of5 {
+            min-height: 60%;
+        }
+
+        &-2of5 {
+            min-height: 40%;
+        }
+
+        &-1of5 {
+            min-height: 20%;
+        }
+
+        &-3of4 {
+            min-height: 75%;
+        }
+
+        &-1of4 {
+            min-height: 25%;
+        }
+
+        &-2of3 {
+            min-height: calc(2 / 3 * 100%);
+        }
+
+        &-1of3 {
+            min-height: calc(1 / 3 * 100%);
+        }
+
+        &-1of2 {
+            min-height: 50%;
+        }
+
+        &-1of1 {
+            min-height: 100%;
+        }
+    }
+}
+
+@mixin min-height-important() {
+    &min-height {
+        &-11of12 {
+            min-height: calc(11 / 12 * 100%) !important;
+        }
+
+        &-7of12 {
+            min-height: calc(7 / 12 * 100%) !important;
+        }
+
+        &-5of12 {
+            min-height: calc(5 / 12 * 100%) !important;
+        }
+
+        &-1of12 {
+            min-height: calc(1 / 12 * 100%) !important;
+        }
+
+        &-5of6 {
+            min-height: calc(5 / 6 * 100%) !important;
+        }
+
+        &-1of6 {
+            min-height: calc(1 / 6 * 100%) !important;
+        }
+
+        &-4of5 {
+            min-height: 80% !important;
+        }
+
+        &-3of5 {
+            min-height: 60% !important;
+        }
+
+        &-2of5 {
+            min-height: 40% !important;
+        }
+
+        &-1of5 {
+            min-height: 20% !important;
+        }
+
+        &-3of4 {
+            min-height: 75% !important;
+        }
+
+        &-1of4 {
+            min-height: 25% !important;
+        }
+
+        &-2of3 {
+            min-height: calc(2 / 3 * 100%) !important;
+        }
+
+        &-1of3 {
+            min-height: calc(1 / 3 * 100%) !important;
+        }
+
+        &-1of2 {
+            min-height: 50% !important;
+        }
+
+        &-1of1 {
+            min-height: 100% !important;
+        }
+    }
+}

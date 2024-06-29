@@ -1,0 +1,6 @@
+@use '@/app/scss/useMain' as *;
+
+.entityLabel__wrapper {
+    display: ruby;
+    border: 1px solid gray;
+}

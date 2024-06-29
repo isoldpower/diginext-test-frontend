@@ -1,0 +1,73 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+$prefix: "app-";
+
+$active-theme: $light;
+$enable-media-query-dark-mode: false;
+
+// Contextual
+$color-text-default: $color-neutral-1000;
+$color-back-1: $color-neutral-040;
+$color-back-2: $color-neutral-060;
+$color-back-3: $color-neutral-080;
+$color-soft-text-1: $color-neutral-700;
+$color-soft-text-2: $color-neutral-400;
+$color-border-1: $color-neutral-050;
+
+// set to 0 to disable
+$letter-spacing-loose: 0;
+
+$border-radius-1: 1px;
+$border-radius-2: 1px;
+$border-radius-3: 1px;
+
+$box-shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-2: 5px 5px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-3: 5px 5px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-4: 5px 5px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-5: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
+// body
+$body-font-family: $montserrat-font;
+$body-font-size: $font-size-100;
+$body-line-height: 100%;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-neutral-000;
+
+//header
+$header-font-family: $montserrat-font;
+$header-line-height: 100%;
+$header-font-size: $font-size-200;
+$header-font-weight: $font-weight-default;
+
+//heading
+$heading-font-family: $montserrat-font;
+$heading-color-default: $color-text-default;
+$heading-font-weight: $font-weight-default;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 100%;
+$heading-text-transform: none;
+
+//heading 1
+$heading-1-color: $heading-color-default;
+$heading-1-font-family: $heading-font-family;
+$heading-1-font-size: $font-size-800;
+
+//heading 2
+$heading-2-color: $heading-color-default;
+$heading-2-font-family: $heading-font-family;
+$heading-2-font-size: $font-size-700;
+
+//heading 3
+$heading-3-color: $heading-color-default;
+$heading-3-font-family: $heading-font-family;
+$heading-3-font-size: $font-size-600;
+
+//button
+$button-font-family: $montserrat-font;
+$button-font-weight: $font-weight-default;
+$button-border-radius: $border-radius-1;
+$button-line-height: 100%;

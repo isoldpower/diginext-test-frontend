@@ -1,0 +1,9 @@
+@use "@/app/scss/useMain" as *;
+
+.entityView__coordinatesVertex {}
+
+.entityView__wrapper {
+    border: 1px solid gray;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 48px;
+}

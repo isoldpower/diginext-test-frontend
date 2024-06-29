@@ -1,0 +1,43 @@
+@mixin grid() {
+    &grid {
+        display: grid;
+
+        &-row {
+            grid-auto-flow: row;
+        }
+
+        &-col {
+            grid-auto-flow: column;
+        }
+
+        &-rev {
+            grid-auto-flow: revert;
+        }
+
+        &-den {
+            grid-auto-flow: dense;
+        }
+    }
+}
+
+@mixin grid-important() {
+    &grid {
+        display: grid !important;
+
+        &-row {
+            grid-auto-flow: row !important;
+        }
+
+        &-col {
+            grid-auto-flow: column !important;
+        }
+
+        &-rev {
+            grid-auto-flow: revert !important;
+        }
+
+        &-den {
+            grid-auto-flow: dense !important;
+        }
+    }
+}

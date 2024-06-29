@@ -1,0 +1,43 @@
+@mixin flex() {
+    &flex {
+        display: flex;
+
+        &-row {
+            flex-direction: row;
+        }
+
+        &-col {
+            flex-direction: column;
+        }
+
+        &-rr {
+            flex-direction: row-reverse;
+        }
+
+        &-cr {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+@mixin flex-important() {
+    &flex {
+        display: flex !important;
+
+        &-row {
+            flex-direction: row !important;
+        }
+
+        &-col {
+            flex-direction: column !important;
+        }
+
+        &-rr {
+            flex-direction: row-reverse !important;
+        }
+
+        &-cr {
+            flex-direction: column-reverse !important;
+        }
+    }
+}

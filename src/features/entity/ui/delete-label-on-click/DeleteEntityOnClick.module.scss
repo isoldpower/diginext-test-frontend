@@ -1,0 +1,13 @@
+@use "@/app/scss/useMain" as *;
+
+.deleteLabelOnClick__button {
+    display: inline-flex;
+    border: none;
+    background-color: transparent;
+}
+
+.deleteLabelOnClick__button:hover {
+    cursor: pointer;
+    transform: translateX(1px) translateY(-1px);
+    background-color: indianred;
+}

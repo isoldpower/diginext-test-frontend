@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+@use "./spacing/index" as spacing;
+
+@mixin -spacing($size-name, $size-value, $important) {
+    @if $important {
+        @include spacing.margins-important($size-name, $size-value);
+        @include spacing.paddings-important($size-name, $size-value);
+        @include spacing.gap-important($size-name, $size-value);
+    } @else {
+        @include spacing.margins($size-name, $size-value);
+        @include spacing.paddings($size-name, $size-value);
+        @include spacing.gap($size-name, $size-value);
+    }
+}
+
+.#{$prefix} {
+    &mx-auto {
+        margin-inline: auto;
+    }
+
+    @each $size-name, $size-value in $sizes {
+        @include each-breakpoint() {
+            @include -spacing($size-name, $size-value, $important: true);
+        }
+
+        @include -spacing($size-name, $size-value, $important: false);
+    }
+}

@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.#{$prefix} {
+    &ff-body {
+        font-family: $body-font-family;
+    }
+
+    &ff-header {
+        font-family: $header-font-family;
+    }
+
+    &ff-heading {
+        font-family: $heading-font-family;
+    }
+}

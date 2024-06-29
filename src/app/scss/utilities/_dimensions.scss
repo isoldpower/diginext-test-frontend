@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+@use "./dimensions/index" as dimensions;
+
+@mixin -dimensions($important) {
+    @if $important {
+        @include dimensions.min-width-important();
+        @include dimensions.width-important();
+        @include dimensions.min-height-important();
+    } @else {
+        @include dimensions.min-width();
+        @include dimensions.width();
+        @include dimensions.min-height();
+    }
+}
+
+.#{$prefix} {
+    @include each-breakpoint() {
+        @include -dimensions($important: true);
+    }
+
+    @include -dimensions($important: false);
+}

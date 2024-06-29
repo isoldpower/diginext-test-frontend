@@ -1,0 +1,6 @@
+@use "@/app/scss/useMain" as *;
+
+.editableEntitiesList__heading {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

@@ -1,0 +1,63 @@
+@mixin paddings($size-name, $size-value) {
+    &p-#{$size-name} {
+        padding: $size-value;
+    }
+
+    &pt-#{$size-name} {
+        padding-top: $size-value;
+    }
+
+    &pb-#{$size-name} {
+        padding-bottom: $size-value;
+    }
+
+    &pl-#{$size-name} {
+        padding-left: $size-value;
+    }
+
+    &pr-#{$size-name} {
+        padding-right: $size-value;
+    }
+
+    &px-#{$size-name} {
+        padding-left: $size-value;
+        padding-right: $size-value;
+    }
+
+    &py-#{$size-name} {
+        padding-top: $size-value;
+        padding-bottom: $size-value;
+    }
+}
+
+@mixin paddings-important($size-name, $size-value) {
+    &p-#{$size-name} {
+        padding: $size-value !important;
+    }
+
+    &pt-#{$size-name} {
+        padding-top: $size-value !important;
+    }
+
+    &pb-#{$size-name} {
+        padding-bottom: $size-value !important;
+    }
+
+    &pl-#{$size-name} {
+        padding-left: $size-value !important;
+    }
+
+    &pr-#{$size-name} {
+        padding-right: $size-value !important;
+    }
+
+    &px-#{$size-name} {
+        padding-left: $size-value !important;
+        padding-right: $size-value !important;
+    }
+
+    &py-#{$size-name} {
+        padding-top: $size-value !important;
+        padding-bottom: $size-value !important;
+    }
+}

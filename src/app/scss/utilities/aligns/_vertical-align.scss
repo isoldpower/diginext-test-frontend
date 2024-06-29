@@ -1,0 +1,23 @@
+@mixin vertical-align() {
+    &valign {
+        &-center {
+            vertical-align: center;
+        }
+
+        &-middle {
+            vertical-align: middle;
+        }
+    }
+}
+
+@mixin vertical-align-important() {
+    &valign {
+        &-center {
+            vertical-align: center !important;
+        }
+
+        &-middle {
+            vertical-align: middle !important;
+        }
+    }
+}

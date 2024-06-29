@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+@use './aligns' as *;
+
+@mixin -aligns($important) {
+    @if $important {
+        @include align-text-important();
+        @include align-content-important();
+        @include align-items-important();
+        @include justify-items-important();
+        @include justify-content-important();
+        @include vertical-align-important();
+    } @else {
+        @include align-text();
+        @include align-content();
+        @include align-items();
+        @include justify-items();
+        @include justify-content();
+        @include vertical-align();
+    }
+}
+
+.#{$prefix} {
+    @include each-breakpoint() {
+        @include -aligns($important: true);
+    }
+
+    @include -aligns($important: false);
+}
+
+.#{$prefix} {
+    &absolute-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

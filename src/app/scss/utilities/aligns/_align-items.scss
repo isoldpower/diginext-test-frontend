@@ -1,0 +1,39 @@
+@mixin align-items() {
+    &align-items {
+        &-start {
+            align-items: flex-start;
+        }
+
+        &-end {
+            align-items: flex-end;
+        }
+
+        &-center {
+            align-items: center;
+        }
+
+        &-stretch {
+            align-items: stretch;
+        }
+    }
+}
+
+@mixin align-items-important() {
+    &align-items {
+        &-start {
+            align-items: flex-start !important;
+        }
+
+        &-end {
+            align-items: flex-end !important;
+        }
+
+        &-center {
+            align-items: center !important;
+        }
+
+        &-stretch {
+            align-items: stretch !important;
+        }
+    }
+}
