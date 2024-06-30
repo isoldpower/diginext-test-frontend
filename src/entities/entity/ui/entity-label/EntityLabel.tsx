@@ -1,7 +1,7 @@
 import {FC} from "react";
 import '@/app/scss/main.scss';
 import classes from './EntityLabel.module.scss';
-import {EntityLabelData} from "@/entities/entity";
+import {EntityLabel as EntityLabelData} from "@/entities/entity";
 
 type EntityLabelProps = {
     data?: EntityLabelData;

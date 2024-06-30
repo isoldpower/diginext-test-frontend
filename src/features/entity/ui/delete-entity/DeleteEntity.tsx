@@ -1,6 +1,7 @@
 import {FC, ReactNode, useCallback} from "react";
 import '@/app/scss/main.scss';
 import {EntityPayload} from "@/entities/entity";
+import {deleteEntityAsync, useAppDispatch} from "@/app/redux";
 
 type DeleteEntityProps = {
     children: ReactNode;
@@ -9,8 +10,10 @@ type DeleteEntityProps = {
 
 
 export const DeleteEntity: FC<DeleteEntityProps> = ({children, entity}: DeleteEntityProps) => {
+    const dispatch = useAppDispatch();
+
     const handleClick = useCallback(() => {
-        console.log(entity.currentData.name, 'deleted');
+        dispatch(deleteEntityAsync(entity.currentData.id));
     }, [entity]);
 
     return (

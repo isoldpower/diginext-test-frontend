@@ -1,2 +1,3 @@
 export * from './types';
-export * from './useEntity';
+export * from './interfaces';
+export * from './types'

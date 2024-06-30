@@ -1,14 +1,16 @@
-import {FC, useState} from "react";
+import {FC, useEffect} from "react";
 import '@/app/scss/main.scss';
 import classes from './EditableEntitiesList.module.scss';
-import {Button} from "@/shared/ui-toolkit";
-import dataMock from './DATA_MOCK.json';
-import {EntityData} from "@/entities/entity";
 import {EditableEntity} from "@/widgets/entity";
 import {CreateNewEntity} from "@/features/entity";
+import {fetchEntities, selectEntities, useAppDispatch, useTypedSelector} from "@/app/redux";
 
 export const EditableEntitiesList: FC = () => {
-    const [entities, setEntities] = useState<EntityData[]>(dataMock.entities);
+    const dispatch = useAppDispatch();
+    const entities = useTypedSelector(selectEntities);
+    useEffect(() => {
+        dispatch(fetchEntities());
+    }, []);
 
     return (
         <div className={`${classes.editableEntitiesList__wrapper} app-grid app-gap-4`}>
