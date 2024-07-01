@@ -12,14 +12,11 @@ export const CreateNewEntity: FC<CreateNewEntityProps> = ({children}: CreateNewE
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const name = (e.currentTarget.elements.namedItem('name') as HTMLInputElement).value;
-        const coordinateX = Number((e.currentTarget.elements.namedItem('coordinate-x') as HTMLInputElement).value);
-        const coordinateY = Number((e.currentTarget.elements.namedItem('coordinate-y') as HTMLInputElement).value);
-
+        const formData = new FormData(e.currentTarget);
         dispatch(createEntityAsync({
-            name: name,
-            x: coordinateX,
-            y: coordinateY,
+            name: formData.get('name').toString(),
+            x: Number(formData.get('coordinate-x')),
+            y: Number(formData.get('coordinate-y')),
             labels: []
         }));
     };

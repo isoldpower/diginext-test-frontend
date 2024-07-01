@@ -24,10 +24,11 @@ const entitiesSlice = createSlice({
             )
         ),
     selectors: {
-        selectEntities: (state: EntitiesState) => state.entities
+        selectEntities: (state: EntitiesState) => state.entities,
+        selectStatus: (state: EntitiesState) => state.status
     }
 });
 
 
 export default entitiesSlice.reducer;
-export const {selectEntities} = entitiesSlice.selectors;
+export const {selectEntities, selectStatus} = entitiesSlice.selectors;

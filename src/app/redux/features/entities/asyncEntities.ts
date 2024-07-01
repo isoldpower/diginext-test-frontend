@@ -1,14 +1,14 @@
 import {createAsyncThunk} from "@reduxjs/toolkit/react";
 import {EntityRequest, EntityResponse} from "@/entities/entity";
 
-const ENTITIES_API_URL = 'http://localhost:8000/api/v1/entities';
+export const ENTITIES_API_URL = 'http://localhost:8000/api/v1/entities';
 
 export const fetchEntities = createAsyncThunk<EntityResponse[], void>('entities/fetchEntities', async () => {
     const response = await fetch(`${ENTITIES_API_URL}/entities/`);
     return await response.json();
 });
 
-export const updateEntityAsync = createAsyncThunk<EntityResponse, EntityResponse>('entities/updateEntityAsync', async (entity: EntityResponse) => {
+export const updateEntityAsync = createAsyncThunk<EntityResponse, EntityResponse>('entities/updateEntityAsync', async (entity: EntityResponse): Promise<EntityResponse> => {
     const response = await fetch(`${ENTITIES_API_URL}/entities/${entity.id}/`, {
         method: 'PATCH',
         headers: {

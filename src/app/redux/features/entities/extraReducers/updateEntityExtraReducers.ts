@@ -14,14 +14,10 @@ export const addUpdateEntityExtraReducers = (builder: ActionReducerMapBuilder<En
         })
         .addCase(updateEntityAsync.fulfilled, (state, action) => {
             state.status = 'ready';
-            state.entities = [
-                ...state.entities.filter(entity => entity.id !== action.payload.id), {
-                    ...action.payload,
-                    coordinates: {
-                        x: action.payload.x,
-                        y: action.payload.y
-                    }
-                }
-            ];
+            state.entities.map(entity => {
+                return entity.id === action.payload.id
+                    ? action.payload
+                    : entity;
+            });
         });
 }

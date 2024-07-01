@@ -1,4 +1,4 @@
-import {DeleteLabelOnClick} from "@/features/entity";
+import {DeleteLabelOnClick, ViewEntity} from "@/features/entity";
 import {EntityLabel} from "@/entities/entity/ui/entity-label/EntityLabel";
 import {EntityData, EntityView} from "@/entities/entity";
 import {FC} from "react";
@@ -13,7 +13,7 @@ type EditableEntityProps = {
 }
 
 export const EditableEntity: FC<EditableEntityProps> = ({data}) => {
-    const entity = useEntity(data);
+    const entity = useEntity({...data, x: data.coordinates.x, y: data.coordinates.y});
 
     return (
         <EntityView data={entity.currentData}>
@@ -29,6 +29,11 @@ export const EditableEntity: FC<EditableEntityProps> = ({data}) => {
             </div>
             <div className={`${classes.editableEntity__controls}`}>
                 <DeleteEntity entity={entity}>-</DeleteEntity>
+                <ViewEntity entity={entity.currentData}>
+                    <div className={`${classes.editableEntity__view} app-fs-100`}>
+                        {'>'}
+                    </div>
+                </ViewEntity>
             </div>
         </EntityView>
     )
