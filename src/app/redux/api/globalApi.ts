@@ -1,12 +1,11 @@
 import {fetchBaseQuery} from "@reduxjs/toolkit/query"
 import {createApi} from "@reduxjs/toolkit/query/react";
 import {EntityResponse} from "@/entities/entity";
-
-const baseUrl = 'http://localhost:8000/api/v1/';
+import {apiRoute} from "@/app/config/api/apiRoutes";
 
 export const globalApi = createApi({
     reducerPath: 'globalApi',
-    baseQuery: fetchBaseQuery({baseUrl: baseUrl}),
+    baseQuery: fetchBaseQuery({baseUrl: apiRoute}),
     endpoints: (builder) => ({
         fetchEntity: builder.query<EntityResponse, number>({
             query: (id) => `entities/entities/${id}/`
