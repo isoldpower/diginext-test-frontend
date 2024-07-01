@@ -1,15 +1,15 @@
 import {Coordinates} from "@/shared/utilities";
-import {EntityLabel} from "@/entities/label";
+import {EntityLabelType} from "@/entities/label";
 
 export type EntityData = {
     id: number;
     name: string;
     coordinates: Coordinates;
-    labels?: EntityLabel[];
+    labels?: EntityLabelType[];
 }
 
 export type EntityRequest = {
-    labels: EntityLabel[];
+    labels: EntityLabelType[];
     x: number;
     y: number;
     name: string;
@@ -17,7 +17,7 @@ export type EntityRequest = {
 
 export type EntityResponse = {
     id: number;
-    labels?: EntityLabel[];
+    labels?: EntityLabelType[];
     x: number;
     y: number;
     name: string;

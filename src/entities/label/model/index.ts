@@ -1,1 +1,1 @@
-export * from './types';
+export type {EntityLabel as EntityLabelType, EntityLabelData} from './types';
