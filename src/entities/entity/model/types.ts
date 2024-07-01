@@ -1,12 +1,5 @@
 import {Coordinates} from "@/shared/utilities";
-
-export type EntityLabelData = {
-    title: string;
-}
-
-export type EntityLabel = EntityLabelData & {
-    id: number;
-}
+import {EntityLabel} from "@/entities/label";
 
 export type EntityData = {
     id: number;

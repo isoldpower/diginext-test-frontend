@@ -1,13 +1,13 @@
 import {FC, FormEvent, useRef} from "react";
 import '@/app/scss/main.scss';
 import classes from './CreateNewLabel.module.scss';
-import {EntityPayload} from "@/features/entity";
+import {EntityLabel} from "@/entities/entity";
 
 type CreateNewLabelProps = {
-    entity: EntityPayload;
+    addLabel: (label: EntityLabel) => void;
 }
 
-export const CreateNewLabel: FC<CreateNewLabelProps> = ({entity}: CreateNewLabelProps) => {
+export const CreateNewLabel: FC<CreateNewLabelProps> = ({addLabel}: CreateNewLabelProps) => {
     const inputRef = useRef<HTMLInputElement>();
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -15,10 +15,7 @@ export const CreateNewLabel: FC<CreateNewLabelProps> = ({entity}: CreateNewLabel
 
         const formData = new FormData(e.currentTarget);
         const nameRaw = formData.get('name');
-        entity.addLabel({
-            title: nameRaw.toString(),
-            id: undefined
-        });
+        addLabel({title: nameRaw.toString(), id: undefined});
     }
 
     return (

@@ -1,10 +1,9 @@
 import {FC} from "react";
 import '@/app/scss/main.scss';
 import classes from "./EntityOverview.module.scss";
-import {CreateNewLabel, DeleteLabelOnClick, useEntity} from "@/features/entity";
+import {useEntity, ViewCoordinates, RenameEntity} from "@/features/entity";
 import {EntityResponse} from "@/entities/entity";
-import {ViewCoordinates} from "@/features/entity/ui/view-coordinates/ViewCoordinates";
-import {RenameEntity} from "@/features/entity/ui/rename-entity/RenameEntity";
+import {EntityLabelsList} from "@/widgets/label";
 
 type EntityOverviewProps = {
     data: EntityResponse;
@@ -21,18 +20,7 @@ export const EntityOverview: FC<EntityOverviewProps> = ({data}: EntityOverviewPr
             <RenameEntity entity={entity} />
             <div className={`${classes.entityPage__border} app-grid app-gap-2 app-p-4`}>
                 <div className={`${classes.entityPage__labelsHeading} app-gap-2`}>Labels</div>
-                <div className={`${classes.entityPage__labels}`}>
-                    {entity.currentData.labels.map(item => (
-                        <div
-                            className={`${classes.entityPage__label} app-px-2 app-flex app-gap-2 app-justify-content-center app-align-items-center`}>
-                            <div className={`${classes.entityPage__labelTitle} app-p-2`}>{item.title}</div>
-                            <DeleteLabelOnClick data={item} deleteLabel={entity.removeLabel}>
-                                <div className={`${classes.entityPage__delete}`}>-</div>
-                            </DeleteLabelOnClick>
-                        </div>
-                    ))}
-                    <CreateNewLabel entity={entity} />
-                </div>
+                <EntityLabelsList labels={entity.currentData?.labels} {...entity} />
             </div>
             <div>
                 <h4 className='app-pb-4'>Coordinates</h4>

@@ -1,12 +1,9 @@
-import {DeleteLabelOnClick, ViewEntity} from "@/features/entity";
-import {EntityLabel} from "@/entities/entity/ui/entity-label/EntityLabel";
-import {EntityData, EntityView} from "@/entities/entity";
 import {FC} from "react";
-import {CreateNewLabel} from "@/features/entity/ui/create-new-label/CreateNewLabel";
-import {DeleteEntity} from "@/features/entity/ui/delete-entity/DeleteEntity";
-
 import classes from './EditableEntity.module.scss';
-import {useEntity} from "@/features/entity";
+
+import {EntityData, EntityView} from "@/entities/entity";
+import {DeleteEntity, ViewEntity, useEntity} from "@/features/entity";
+import {EntityLabelsList} from "@/widgets/label";
 
 type EditableEntityProps = {
     data: EntityData;
@@ -17,16 +14,7 @@ export const EditableEntity: FC<EditableEntityProps> = ({data}) => {
 
     return (
         <EntityView data={entity.currentData}>
-            <div className='app-grid app-gap-2'>
-                <div className={classes.entityView__labels}>
-                    {entity.currentData?.labels?.map((label, index) => (
-                        <DeleteLabelOnClick data={label} key={index} deleteLabel={entity.removeLabel}>
-                            <EntityLabel data={label}/>
-                        </DeleteLabelOnClick>
-                    ))}
-                </div>
-                <CreateNewLabel entity={entity}/>
-            </div>
+            <EntityLabelsList labels={entity.currentData?.labels} {...entity} />
             <div className={`${classes.editableEntity__controls}`}>
                 <DeleteEntity entity={entity}>-</DeleteEntity>
                 <ViewEntity entity={entity.currentData}>

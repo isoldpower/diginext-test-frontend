@@ -1,16 +1,16 @@
-import {FC, useEffect} from "react";
+import {cloneElement, FC, ReactElement} from "react";
 import '@/app/scss/main.scss';
 import classes from './EditableEntitiesList.module.scss';
-import {EditableEntity} from "@/widgets/entity";
 import {CreateNewEntity} from "@/features/entity";
-import {fetchEntities, selectEntities, useAppDispatch, useTypedSelector} from "@/app/redux";
+import {selectEntities, useTypedSelector} from "@/app/redux";
+import {EntitiesList} from "@/entities/entity";
 
-export const EditableEntitiesList: FC = () => {
-    const dispatch = useAppDispatch();
+type EditableEntitiesListProps = {
+    children: ReactElement;
+}
+
+export const EditableEntitiesList: FC<EditableEntitiesListProps> = ({children}: EditableEntitiesListProps) => {
     const entities = useTypedSelector(selectEntities);
-    useEffect(() => {
-        dispatch(fetchEntities());
-    }, []);
 
     return (
         <div className={`${classes.editableEntitiesList__wrapper} app-grid app-gap-4`}>
@@ -18,18 +18,13 @@ export const EditableEntitiesList: FC = () => {
                 <CreateNewEntity>Create</CreateNewEntity>
             </div>
             <hr/>
-            <div className={`${classes.editableEntitiesList__entitiesList} app-grid`}>
-                <div className={`${classes.editableEntitiesList__heading} app-grid`}>
-                    <div>Name</div>
-                    <div>Coordinates</div>
-                    <div>Labels</div>
-                </div>
-                <div className={`${classes.editableEntitiesList__entitiesList} app-grid`}>
-                    {entities.map(entity => (
-                        <EditableEntity data={entity} key={entity.id} />
-                    ))}
-                </div>
-            </div>
+            <EntitiesList>
+                {entities.map(entity => cloneElement(children, {
+                    ...children.props,
+                    data: entity,
+                    key: entity.id
+                }))}
+            </EntitiesList>
         </div>
     );
 };

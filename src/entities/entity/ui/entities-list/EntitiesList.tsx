@@ -1,21 +1,22 @@
-import {BaseHTMLAttributes, cloneElement, FC, ReactElement} from "react";
+import {FC, ReactNode} from "react";
 import '@/app/scss/main.scss';
-import {EntityData} from "@/entities/entity";
 import classes from './EntitiesList.module.scss';
 
 type EntitiesListProps = {
-    data: EntityData[];
-    children: ReactElement;
+    children: ReactNode;
 };
 
-export const EntitiesList: FC<EntitiesListProps> = ({data, children}: EntitiesListProps) => {
-    return data ? (
+export const EntitiesList: FC<EntitiesListProps> = ({children}: EntitiesListProps) => {
+    return (
         <div className={`${classes.editableEntitiesList__entitiesList} app-grid`}>
-            {data.map(entity => cloneElement(children, {
-                ...children.props,
-                data: entity,
-                key: entity.id
-            }))}
+            <div className={`${classes.editableEntitiesList__heading} app-grid`}>
+                <div>Name</div>
+                <div>Coordinates</div>
+                <div>Labels</div>
+            </div>
+            <div className={`${classes.editableEntitiesList__entitiesList} app-grid`}>
+                {children}
+            </div>
         </div>
-    ) : undefined;
+    );
 };
