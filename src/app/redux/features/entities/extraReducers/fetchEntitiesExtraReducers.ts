@@ -14,7 +14,6 @@ export const addFetchEntitiesExtraReducers = (builder: ActionReducerMapBuilder<E
         })
         .addCase(fetchEntities.fulfilled, (state, action) => {
             state.status = 'ready';
-            console.log(action.payload);
             state.entities = action.payload.map(entity => ({
                 ...entity,
                 coordinates: {
